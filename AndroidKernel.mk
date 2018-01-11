@@ -6,6 +6,7 @@ export KBUILD_BUILD_HOST := hardenedos
 PERL		= perl
 
 KERNEL_CC := $(ANDROID_BUILD_TOP)/prebuilts/clang/host/$(HOST_OS)-x86/clang-copperhead/bin/clang
+KERNEL_CFLAGS := KCFLAGS=-fsanitize=local-init
 
 KERNEL_TARGET := $(strip $(INSTALLED_KERNEL_TARGET))
 ifeq ($(KERNEL_TARGET),)
